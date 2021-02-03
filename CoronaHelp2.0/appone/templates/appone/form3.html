@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Identification</title>
+
+    <link rel="stylesheet" href="{% static 'appone/css/style.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+</head>
+<style>
+    div.a{
+    text-align: center;
+    border: #08088A 3px solid;
+    background-clip: content-box;
+    background-color:#5882FA;
+    }
+    div.b{text-align:center;}
+    a.bouton1 {
+        padding: 10px 30px;
+        background: #5FB404;
+        color: #000000;
+        -webkit-border-radius: 11px;
+        -moz-border-radius: 11px;
+        border-radius: 11px;
+        border: 2px solid #088A08;
+        }
+    a.bouton2 {
+        padding: 10px 30px;
+        background: #FF0000;
+        color: #000000;
+        -webkit-border-radius: 11px;
+        -moz-border-radius: 11px;
+        border-radius: 11px;
+        border: 2px solid #B40404;
+        }
+
+</style>
+<body>
+    <br>
+    <br>
+    <div class="a">
+
+
+    <h2>Êtes-vous déjà inscrit ?</h2>
+        </div>
+    <br><br>
+    <div class="b">
+    <a href="identification/" class="bouton1">OUI</a>
+    <br><br><br>
+
+    <a href="/getformdata/" class="bouton2">NON</a>
+        </div>
+       <!--  <form action="identification/" method="post">
+        {% csrf_token %}
+            <input type="submit" value="oui" >
+         </form>
+         <form action="/getformdata/" method="post">
+        {% csrf_token %}
+            <input type="submit" value="non" >
+         </form>
+
+    <form action="{% url 'get-donnee-identification' %}" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+
+
+</form> -->
+<br><br><br>
+    <div class="b">
+        <h3>Petit rappel... </h3>
+
+
+
+
+{% for image in images %}
+    {% with 'appone/'|add:image.nom_fichier as cheminfichier %}
+    <div class="picture">
+        <img src="{% static cheminfichier %}" style="border:solid 2px #000000" width="1000" height="350" />
+            </div>
+
+    </div>
+         </div>
+    {% endwith %}
+{% endfor %}
+
+
+
+</body>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription validée</title>
+</head>
+<body>
+         <h2>Félicitations ! Votre inscription a bien été validée.</h2>
+         <form action="identification/" method="post">
+        {% csrf_token %}
+            <input type="submit" value="Continuer" >
+         </form>
+</body>
+</html>
